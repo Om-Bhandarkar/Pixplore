@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{%load static %}
+{% block main_body %}
+<!-- About Section -->
+<div class="container my-5">
+    <h1 class="text-center mb-4">About Pixplore</h1>
+    <div class="row">
+        <div class="col-lg-4 mb-2">
+            <img src="{% static 'images/about-us.jpg'%}" alt="img" class="img-fluid rounded">
+        </div>
+        <div class="col-lg-6">
+            <h2>What is Pixplore ?</h2>
+            <p>Pixplore is a simple and user-friendly web application that allows users to search for high-quality
+                photos from Unsplash, one of the most popular platforms for free stock photography.</p>
+            <h2>Features</h2>
+            <ul>
+                <li>Search millions of photos using keywords.</li>
+                <li>Responsive design for all devices.</li>
+                <li>View photos and their details directly from Unsplash.</li>
+            </ul>
+            <h2>Technologies Used</h2>
+            <p>This project leverages:</p>
+            <ul>
+                <li><strong>Django</strong>: Backend framework for building robust web applications.</li>
+                <li><strong>Unsplash API</strong>: Provides access to a vast collection of images.</li>
+                <li><strong>Bootstrap</strong>: Ensures a modern and responsive UI.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

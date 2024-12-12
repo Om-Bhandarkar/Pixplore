@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block main_body %}
+<!-- Main Content -->
+<div class="container my-5">
+    <h2 class="text-center">Explore the world through pictures.</h2>
+    <br><br><br>
+    <form class="d-flex justify-content-center mb-3" method="get">
+        <input class="form-control me-2 w-50" type="text" name="query" placeholder="Search for photos"
+            value="{{ query }}">
+        <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+
+    <!-- Photo Grid -->
+    <div class="row g-4">
+        {% for photo in photos %}
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card">
+                <img src="{{ photo.urls.small }}" class="card-img-top" alt="{{ photo.alt_description }}">
+                <div class="card-body">
+                    <p class="card-text">Photo by: {{ photo.user.name }}</p>
+                    <a href="{{ photo.links.html }}" target="_blank" class="btn btn-sm btn-outline-primary">View on
+                        Unsplash</a>
+                </div>
+            </div>
+        </div>  
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
